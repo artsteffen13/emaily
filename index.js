@@ -5,5 +5,8 @@ app.get('/', (req, res) => {
     res.send('Hello')
 });
 
-const PORT = process.env.port;
-app.listen(PORT || 5000);
+let port = process.env.PORT;
+if (port == null || port == "") {
+    port = 3000;
+}
+app.listen(port);
